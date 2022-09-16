@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="calculate_bmi_for">Calculate BMI for:</string>
+    <string name="child_age_2_to_19">Child Age 2–19</string>
+    <string name="adult_age_20_plus">Adult Age 20+</string>
+    <string name="weight_in_kg">Weight (kg)</string>
+    <string name="height_in_ft">Height (ft)</string>
+    <string name="calculate">Calculate</string>
+</resources>
