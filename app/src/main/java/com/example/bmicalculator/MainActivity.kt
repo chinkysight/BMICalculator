@@ -1,9 +1,10 @@
 package com.example.bmicalculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.bmicalculator.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
+import kotlin.math.pow
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,20 +23,21 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateBMI() {
 
-        val weightInString: String = binding.weightTextInputEditText.text.toString()
-        val heightInString: String = binding.heightTextInputLayoutEditText.text.toString()
+        val weight: String = binding.weightTextInputEditText.text.toString()
+        val heightInFoot: String = binding.heightInFeetTextInputLayoutEditText.text.toString()
+        var heightInInch: String = binding.heightInInchTextInputLayoutEditText.text.toString()
 
-        var weightInDouble: Double? = weightInString.toDoubleOrNull()
-        var heightInDouble: Double? = heightInString.toDoubleOrNull()
+        if (weight.isEmpty() || heightInFoot.isEmpty()) {
+            if (weight.isEmpty() && heightInFoot.isEmpty()) {
 
-
-        if (weightInDouble == null || heightInDouble == null) {
-            if (weightInDouble == null && heightInDouble == null) {
-
-                Snackbar.make(binding.root, "Please enter required info", Snackbar.LENGTH_SHORT)
+                Snackbar.make(
+                    binding.root,
+                    "Please enter required information",
+                    Snackbar.LENGTH_SHORT
+                )
                     .show()
 
-            } else if (weightInDouble == null) {
+            } else if (weight.isEmpty()) {
                 Snackbar.make(binding.root, "Please enter your weight", Snackbar.LENGTH_SHORT)
                     .show()
 
@@ -47,9 +49,28 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        // Write BMI calculating logic below
+        if (heightInInch.isEmpty()) {
+            heightInInch = "0"
+        }
+
+        val heightInMeter: Double = convertFeetIntoMeter(
+            heightInFoot.toInt(),
+            heightInInch.toInt()
+        )
+
+        var bmi: Double = weight.toDouble() / heightInMeter.pow(2)
+
+        bmi = roundOffMantissaToNearest(100, bmi)
+
+        binding.bmiResult.text = getString(R.string.bmi_result, bmi.toString())
 
 
     }
-
 }
+
+
+
+
+
+
+

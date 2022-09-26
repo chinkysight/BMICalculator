@@ -62,25 +62,58 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/height_textInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <LinearLayout
+            android:id="@+id/height_linear_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="@string/height_in_ft"
-            android:paddingBottom="16dp"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/weight_textInputLayout"
             app:layout_constraintTop_toBottomOf="@id/weight_textInputLayout">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/height_textInputLayoutEditText"
-                android:layout_width="match_parent"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/height_in_feet_textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:textColorHint="#757575" />
+                android:layout_weight="6"
+                android:hint="@string/height_in_ft"
+                android:paddingBottom="16dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/height_in_feet_textInputLayoutEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#757575" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/height_in_inch_textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:hint="@string/height_in_in"
+                android:paddingBottom="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/height_in_inch_textInputLayoutEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:textColorHint="#757575" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/calculate_button"
@@ -89,8 +122,8 @@
             android:paddingVertical="16dp"
             android:text="@string/calculate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/height_textInputLayout"
-            app:layout_constraintTop_toBottomOf="@id/height_textInputLayout" />
+            app:layout_constraintStart_toStartOf="@id/height_linear_layout"
+            app:layout_constraintTop_toBottomOf="@id/height_linear_layout" />
 
         <TextView
             android:id="@+id/bmi_result"
