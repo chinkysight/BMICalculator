@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
-    <string name="calculate_bmi_for">Calculate BMI for:</string>
+    <string name="bmi_chart">BMI chart:</string>
     <string name="child_age_2_to_19">Child Age 2–19</string>
     <string name="adult_age_20_plus">Adult Age 20+</string>
     <string name="weight_in_kg">Weight (kg)</string>
@@ -8,4 +8,14 @@
     <string name="height_in_in">Height (in.)</string>
     <string name="calculate">Calculate</string>
     <string name="bmi_result">Your BMI is %1$s</string>
+    <string name="bmi">BMI</string>
+    <string name="status">STATUS</string>
+    <string name="obese">Obese</string>
+    <string name="greater_than_or_equal_to_40.0">≥ 40.0</string>
+    <string name="overweight">Overweight</string>
+    <string name="normal">Normal</string>
+    <string name="between_25_and_39.9">25.0 – 39.9</string>
+    <string name="between_18.5_and_24.9">18.5 – 24.9</string>
+    <string name="underweight">Underweight</string>
+    <string name="less_than_or_equal_to_18.4">≤ 18.4</string>
 </resources>

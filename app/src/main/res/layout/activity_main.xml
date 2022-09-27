@@ -12,35 +12,106 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/calculate_bmi_for"
+            android:id="@+id/bmi_chart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calculate_bmi_for"
+            android:text="@string/bmi_chart"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioGroup
-            android:id="@+id/radio_group"
+        <TableLayout
+            android:id="@+id/bmi_chart_table"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:checkedButton="@id/radio_button_option_adult"
+            android:layout_marginHorizontal="30dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/calculate_bmi_for"
-            app:layout_constraintTop_toBottomOf="@id/calculate_bmi_for">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bmi_chart">
 
-            <RadioButton
-                android:id="@+id/radio_button_option_child"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/child_age_2_to_19" />
+            <TableRow>
 
-            <RadioButton
-                android:id="@+id/radio_button_option_adult"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/adult_age_20_plus" />
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/bmi"
+                    android:textStyle="bold" />
 
-        </RadioGroup>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/status"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/less_than_or_equal_to_18.4" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/underweight" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/between_18.5_and_24.9" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/normal" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/between_25_and_39.9" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/overweight" />
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/greater_than_or_equal_to_40.0" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+
+                <TextView
+                    android:layout_weight="6"
+                    android:text="@string/obese" />
+            </TableRow>
+
+
+        </TableLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/weight_textInputLayout"
@@ -50,14 +121,14 @@
             android:hint="@string/weight_in_kg"
             android:paddingVertical="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/radio_group"
-            app:layout_constraintTop_toBottomOf="@id/radio_group">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bmi_chart_table">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/weight_textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
+                android:inputType="number"
                 android:textColorHint="#757575" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -84,7 +155,7 @@
                     android:id="@+id/height_in_feet_textInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
                     android:textColorHint="#757575" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +178,7 @@
                     android:id="@+id/height_in_inch_textInputLayoutEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
+                    android:inputType="number"
                     android:textColorHint="#757575" />
 
             </com.google.android.material.textfield.TextInputLayout>

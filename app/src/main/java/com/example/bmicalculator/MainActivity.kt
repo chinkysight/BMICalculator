@@ -18,18 +18,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         binding.calculateButton.setOnClickListener { calculateBMI() }
     }
 
     private fun calculateBMI() {
-
         val weight: String = binding.weightTextInputEditText.text.toString()
         val heightInFoot: String = binding.heightInFeetTextInputLayoutEditText.text.toString()
         var heightInInch: String = binding.heightInInchTextInputLayoutEditText.text.toString()
 
         if (weight.isEmpty() || heightInFoot.isEmpty()) {
             if (weight.isEmpty() && heightInFoot.isEmpty()) {
-
                 Snackbar.make(
                     binding.root,
                     "Please enter required information",
@@ -46,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                     .show()
 
             }
-            return
         }
 
         if (heightInInch.isEmpty()) {
@@ -60,10 +58,10 @@ class MainActivity : AppCompatActivity() {
 
         var bmi: Double = weight.toDouble() / heightInMeter.pow(2)
 
-        bmi = roundOffMantissaToNearest(100, bmi)
+
+        bmi = roundOffMantissaToNearest(10, bmi)
 
         binding.bmiResult.text = getString(R.string.bmi_result, bmi.toString())
-
 
     }
 }

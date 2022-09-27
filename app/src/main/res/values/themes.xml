@@ -14,6 +14,5 @@
         <!-- Customize your theme here. -->
         <item name="radioButtonStyle">@style/Widget.BMICalculator.CompoundButton.RadioButton</item>
         <item name="android:textViewStyle">@style/Widget.BMICalculator.TextView</item>
-
     </style>
 </resources>
