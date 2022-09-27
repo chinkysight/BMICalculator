@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
                     .show()
 
             }
+            return
         }
 
         if (heightInInch.isEmpty()) {
@@ -61,7 +62,14 @@ class MainActivity : AppCompatActivity() {
 
         bmi = roundOffMantissaToNearest(10, bmi)
 
-        binding.bmiResult.text = getString(R.string.bmi_result, bmi.toString())
+        val bmiStatus: String = when {
+            bmi <= 18.4 -> resources.getString(R.string.underweight)
+            bmi > 18.4 && bmi <= 24.9 -> resources.getString(R.string.normal)
+            bmi > 24.9 && bmi <= 39.9 -> resources.getString(R.string.overweight)
+            else -> resources.getString(R.string.obese)
+        }
+
+        binding.bmiResult.text = getString(R.string.bmi_result, bmi.toString(), "($bmiStatus)")
 
     }
 }

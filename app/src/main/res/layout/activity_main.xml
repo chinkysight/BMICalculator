@@ -11,13 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/bmi_chart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bmi_chart"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TableLayout
             android:id="@+id/bmi_chart_table"
@@ -26,7 +19,7 @@
             android:layout_marginHorizontal="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/bmi_chart">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TableRow>
 

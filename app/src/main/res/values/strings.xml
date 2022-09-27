@@ -1,13 +1,12 @@
 <resources>
     <string name="app_name">BMI Calculator</string>
-    <string name="bmi_chart">BMI chart:</string>
     <string name="child_age_2_to_19">Child Age 2–19</string>
     <string name="adult_age_20_plus">Adult Age 20+</string>
     <string name="weight_in_kg">Weight (kg)</string>
     <string name="height_in_ft">Height (ft)</string>
     <string name="height_in_in">Height (in.)</string>
     <string name="calculate">Calculate</string>
-    <string name="bmi_result">Your BMI is %1$s</string>
+    <string name="bmi_result">Your BMI is %1$s %2$s</string>
     <string name="bmi">BMI</string>
     <string name="status">STATUS</string>
     <string name="obese">Obese</string>
