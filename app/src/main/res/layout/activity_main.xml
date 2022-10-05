@@ -145,7 +145,7 @@
                 android:paddingBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/height_in_feet_textInputLayoutEditText"
+                    android:id="@+id/height_in_feet_textInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
@@ -168,7 +168,7 @@
                 android:paddingBottom="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/height_in_inch_textInputLayoutEditText"
+                    android:id="@+id/height_in_inch_textInputEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"

@@ -24,8 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun calculateBMI() {
         val weight: String = binding.weightTextInputEditText.text.toString()
-        val heightInFoot: String = binding.heightInFeetTextInputLayoutEditText.text.toString()
-        var heightInInch: String = binding.heightInInchTextInputLayoutEditText.text.toString()
+        val heightInFoot: String = binding.heightInFeetTextInputEditText.text.toString()
+        var heightInInch: String = binding.heightInInchTextInputEditText.text.toString()
 
         if (weight.isEmpty() || heightInFoot.isEmpty()) {
             if (weight.isEmpty() && heightInFoot.isEmpty()) {
